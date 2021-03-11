@@ -1,0 +1,49 @@
+{% extends 'home/home.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-11 p-4 boxtext1 c">
+    <h1 class="c">LogIn</h1>
+</div>
+
+<div class="col-md-11 p-4 boxtext1 c">
+
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="col-md-8 mx-auto">
+            <div class="card boxtext1" >
+                <div class="card-body">
+                    <div class="col-md-8 mt-3 mx-auto c">
+                        <label>Usuario</label>
+                        <input type="text" name="username" class="form-control">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-5 mb-3 mx-auto c">
+                        <label>Contraseña</label>
+                        <input type="password" name="password" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mx-auto row ">
+            <div class="container col-lg-5 mt-4 mb-4 ">
+                <button class="btn btn-success btn-block" onclick="goBack()">CANCELAR</button>
+            </div>
+
+            <div class="container col-lg-5 mt-4 mb-4 ">
+                <input class="btn btn-success btn-block" type="submit" value="CREAR EXPERIENCIA">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function goBack() {
+    window.history.back();
+    }
+</script>
+
+{% endblock content %}
+

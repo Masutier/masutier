@@ -1,0 +1,99 @@
+{% extends 'home/home.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-11 p-4 boxtext1 c">
+    <h1 class="c">Estudios</h1>
+</div>
+
+<div class="col-md-11 p-4 boxtext1 c">
+<h1 class="ms-4">Editar Estudio</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="col-md-8 mx-auto">
+            <div class="card boxtext1" >
+                <div class="card-body row mt-4">
+                    <div class="col-md-4 mx-auto">
+                        <label>Comenzó el mes :</label>
+                        {{studieForm.monthStart}}
+                    </div>
+                    <div class="col-md-4 mx-auto">
+                        <label>Comenzó el año :</label>
+                        {{studieForm.yearStart}}
+                    </div>
+                </div>
+                <div class="card-body row">
+                    <div class="col-md-4 mx-auto">
+                        <label>Termino el mes :</label>
+                        {{studieForm.monthEnd}}
+                    </div>
+                    <div class="col-md-4 mx-auto">
+                        <label>Termino el año :</label>
+                        {{studieForm.yearEnd}}
+                    </div>
+                </div>
+                <div class="card-body row">
+                    <div class="col-md-4 mx-auto">
+                        <label>Tipo de Estudio :</label>
+                        {{studieForm.kind}}
+                    </div>
+                    <div class="col-md-4 mx-auto">
+                        <label>terminó? :</label>
+                        {{studieForm.finish}}
+                    </div>
+                </div>
+                <div class="card-body row">
+                    <div class="col-md-4 mx-auto">
+                        <label>Nombre del Curso :</label>
+                        {{studieForm.name}}
+                    </div>
+                    <div class="col-md-4 mx-auto">
+                        <label>Complemento al nombre :</label>
+                        {{studieForm.remark}}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-4 mx-auto">
+                        <label>Institución :</label>
+                        {{studieForm.institution}}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-4 mx-auto">
+                        <label>Ciudad :</label>
+                        {{studieForm.city}}
+                    </div>
+                </div>
+                <div class="card-body row  mb-4">
+                    <div class="col-md-4 mx-auto">
+                        <label>Estado :</label>
+                        {{studieForm.state}}
+                    </div>
+                    <div class="col-md-4 mx-auto">
+                        <label>País :</label>
+                        {{studieForm.country}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mx-auto row ">
+            <div class="container col-lg-5 mt-4 mb-4 ">
+                <button class="btn btn-success btn-block" onclick="goBack()">CANCELAR</button>
+            </div>
+
+            <div class="container col-lg-5 mt-4 mb-4 ">
+                <input class="btn btn-success btn-block" type="submit" value="ACTUALIZAR">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function goBack() {
+    window.history.back();
+    }
+</script>
+
+{% endblock content %}

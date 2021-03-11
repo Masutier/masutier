@@ -1,0 +1,45 @@
+{% extends 'home/home.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="col-md-11 p-4 boxtext1 c">
+        <h1 class="c">Experiencia Laboral</h1>
+    </div>
+
+    <div class="col-md-11 p-4 boxtext1">
+        <div class="row">
+            {% for Exp in experiences %}
+            <div class="col-md-4 mb-4">
+                <div class="card boxtext1" >
+                    <div class="card-body m-4">
+                        <div class="card-subtitle">
+                            <h6 class="card-text">
+                                {% if Exp.yearStart %}
+                                    {{ Exp.monthStart }} {{ Exp.yearStart }} - 
+                                {% endif %}
+                                {{ Exp.monthEnd }} {{ Exp.yearEnd }}
+                            </h6>
+                        </div>
+                        <h4 class="card-title mt-1">{{Exp.institution}}</h4>
+                        <h5 class="card-text">{{Exp.name}}</h5>
+                        <h5 class="card-text">{{Exp.description}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{Exp.city}} {{Exp.state}} {{Exp.country}}</h6>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div class="col-lg-6 mx-auto row ">
+                        <div class="container col-lg-6 mb-4">
+                            <td><a href="{% url 'editExperience' Exp.id %}" class="btn btn-info btn-sm">Modificar</a></td>
+                        </div>
+                        <div class="container col-lg-6 mb-4">
+                            <td><a href="{% url 'deleteExperience' Exp.id %}" class="btn btn-danger btn-sm">Eliminar</a></td>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}

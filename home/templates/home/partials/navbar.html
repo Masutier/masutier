@@ -1,0 +1,36 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark a1">
+    <a class="navbar-brand " href="/"><img src="{% static '/img/people/gabrielenoq.png' %}" class="imgnav" alt="Gabriel" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link atxt1" href="studies">Estudios</a></li>
+            <li class="nav-item"><a class="nav-link atxt1" href="experiences">Experiencia</a></li>
+            <li class="nav-item"><a class="nav-link atxt1" href="skills">Skills</a></li>
+            
+        </ul>
+        <ul class="navbar-nav mt-2 mt-lg-0">
+            {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Adm
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" style="background-color: #000070;" aria-labelledby="navbarDropdown1">
+                        <li class="nav-item"><a class="nav-link atxt1" href="createStudie">Crear Estudios</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li class="nav-item"><a class="nav-link atxt1" href="createExperience">Crear Experiencia</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li class="nav-item"><a class="nav-link atxt1" href="createSkill">Crear Skill</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                    </ul>
+                </li>
+                <li class="nav-item navtext"><a class="nav-link" href="{% url 'logoutUser' %}">SALIR</a></li>
+            {% else %}
+                <li class="nav-item navtext"><a class="nav-link" href="{% url 'loginPage' %}">Log</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

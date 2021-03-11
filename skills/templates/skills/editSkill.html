@@ -1,0 +1,54 @@
+{% extends 'home/home.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-11 p-4 boxtext1 c">
+    <h1 class="c">Skills</h1>
+</div>
+
+<div class="col-md-11 p-4 boxtext1 c">
+<h1 class="ms-4">Editar Skill</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="col-md-8 mx-auto">
+            <div class="card boxtext1" >
+                <div class="card-body ">
+                    <div class="col-md-5 mx-auto c">
+                        <label>Skill :</label>
+                        {{skillForm.skill}}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-8 mx-auto c">
+                        <label>Descripcion :</label>
+                        {{skillForm.description}}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-5 mx-auto c">
+                        <label>Dominio :</label>
+                        {{skillForm.dominium}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mx-auto row ">
+            <div class="container col-lg-5 mt-4 mb-4 ">
+                <button class="btn btn-success btn-block" onclick="goBack()">CANCELAR</button>
+            </div>
+            <div class="container col-lg-5 mt-4 mb-4 ">
+                <input class="btn btn-success btn-block" type="submit" value="ACTUALIZAR">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function goBack() {
+    window.history.back();
+    }
+</script>
+
+{% endblock content %}

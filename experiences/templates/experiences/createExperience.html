@@ -1,0 +1,89 @@
+{% extends 'home/home.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-11 p-4 boxtext1 c">
+    <h1 class="c">Experiencia Laboral</h1>
+</div>
+
+<div class="col-md-11 p-4 boxtext1 c">
+<h1 class="ms-4">Crear Experiencia</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="col-md-8 mx-auto">
+            <div class="card boxtext1" >
+                <div class="card-body row mt-4">
+                    <div class="col-md-4 mx-auto">
+                        <label>Comenzó el mes :</label>
+                        {{experienceForm.monthStart}}
+                    </div>
+                    <div class="col-md-4 mx-auto">
+                        <label>Comenzó el año :</label>
+                        {{experienceForm.yearStart}}
+                    </div>
+                </div>
+                <div class="card-body row">
+                    <div class="col-md-4 mx-auto">
+                        <label>Termino el mes :</label>
+                        {{experienceForm.monthStart}}
+                    </div>
+                    <div class="col-md-4 mx-auto">
+                        <label>Termino el año :</label>
+                        {{experienceForm.yearEnd}}
+                    </div>
+                </div>
+                <div class="card-body row">
+                    <div class="col-md-4 mx-auto">
+                        <label>Institución :</label>
+                        {{experienceForm.institution}}
+                    </div>
+                    <div class="col-md-4 mx-auto">
+                        <label>Cargo :</label>
+                        {{experienceForm.name}}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-8 mx-auto c">
+                        <label>Descripcion :</label>
+                        {{experienceForm.description}}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-4 mx-auto">
+                        <label>Ciudad :</label>
+                        {{experienceForm.city}}
+                    </div>
+                </div>
+                <div class="card-body row mb-4">
+                    <div class="col-md-4 mx-auto">
+                        <label>Estado :</label>
+                        {{experienceForm.state}}
+                    </div>
+                    <div class="col-md-4 mx-auto">
+                        <label>País :</label>
+                        {{experienceForm.country}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mx-auto row ">
+            <div class="container col-lg-5 mt-4 mb-4 ">
+                <button class="btn btn-success btn-block" onclick="goBack()">CANCELAR</button>
+            </div>
+
+            <div class="container col-lg-5 mt-4 mb-4 ">
+                <input class="btn btn-success btn-block" type="submit" value="CREAR EXPERIENCIA">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function goBack() {
+    window.history.back();
+    }
+</script>
+
+{% endblock content %}
