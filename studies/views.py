@@ -6,11 +6,13 @@ from .models import *
 from home.decorators import admin_only
 
 def studies(request):
-    univ = Studie.objects.filter(kind='University')
-    tech = Studie.objects.filter(kind='Technical')
-    other = Studie.objects.filter(kind='Other')
+    univ = Studie.objects.filter(kind='University').order_by('-yearEnd')
+    tech = Studie.objects.filter(kind='Technical').order_by('-yearEnd')
+    wshop = Studie.objects.filter(kind='WorkShop').order_by('-yearEnd')
+    myself = Studie.objects.filter(kind='Self').order_by('-yearEnd')
+    other = Studie.objects.filter(kind='Other').order_by('-yearEnd')
 
-    context = {"title": "Studies", "univ": univ, "tech": tech, "other": other}
+    context = {"title": "Education", "univ": univ, "tech": tech, "wshop": wshop, "myself": myself, "other": other}
     return render(request, 'studies/studies.html', context)
 
 
@@ -22,10 +24,10 @@ def createStudie(request):
         if studieForm.is_valid():
 
             studieForm.save()
-            messages.success(request, 'El Curso fue creado')
+            messages.success(request, 'The course was created successful')
             return redirect('studies')
 
-    context = {"title": "Create Studies", "studieForm": studieForm}
+    context = {"title": "Create Education", "studieForm": studieForm}
     return render(request, 'studies/createStudie.html', context)
 
 
@@ -37,10 +39,10 @@ def editStudie(request, pk):
         studieForm = CreateStudieForm(request.POST, request.FILES, instance=study)
         if studieForm.is_valid:
             studieForm.save()
-            messages.success(request, 'El Estudio fue Actualizado')
+            messages.success(request, 'The course was Updated successful')
             return redirect('studies')
 
-    context = {"title": "Editar Estudio", "studieForm": studieForm}
+    context = {"title": "Update Education", "studieForm": studieForm}
     return render(request, "studies/editStudie.html", context)
 
 
@@ -49,8 +51,8 @@ def deleteStudie(request, pk):
     study = Studie.objects.get(id=pk)
     if request.method == 'POST':
         study.delete()
-        messages.success(request, 'El Estudio fue Eliminado')
+        messages.success(request, 'The course was Deleted')
         return redirect('studies')
 
-    context = {"title": "Eliminar Estudio", 'item': study}
+    context = {"title": "Delete Education", 'item': study}
     return render(request, 'studies/deleteStudie.html', context)

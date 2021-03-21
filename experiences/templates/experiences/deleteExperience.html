@@ -4,13 +4,13 @@
 {% block content %}
 
 <div class="col-md-11 p-4 boxtext1 c">
-    <h1 class="c">Experiencias</h1>
+    <h1 class="c">Work Experience</h1>
 </div>
 
 <div class="col-md-11 p-4 boxtext1 c">
-<h1 class="ms-4">Eliminar Experiencia</h1>
+<h1 class="ms-4">Delete Experience</h1>
     <div class="card-body">
-        <p>Estas seguro de eliminar la Experiencia </p>
+        <p>Are you sure you want to delete it? </p>
         <h4><strong>"{{item.name}}"</strong></h4>
     </div>
 
@@ -18,10 +18,10 @@
         {% csrf_token %}
         <div class="col-lg-6 mx-auto row ">
             <div class="container col-lg-5 mt-4 mb-4 ">
-                <a class="btn btn-info btn-block" href="{% url 'experiences' %}">CANCELAR</a>
+                <a class="btn btn-info btn-block" href="{% url 'experiences' %}">Cancel</a>
             </div>
             <div class="container col-lg-5 mt-4 mb-4 ">
-                <input class="btn btn-success btn-block" type="submit" value="ELIMINAR">
+                <input class="btn btn-success btn-block" type="submit" value="Delete">
             </div>
         </div>
     </form>

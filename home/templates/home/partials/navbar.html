@@ -7,8 +7,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-auto">
-            <li class="nav-item"><a class="nav-link atxt1" href="studies">Estudios</a></li>
-            <li class="nav-item"><a class="nav-link atxt1" href="experiences">Experiencia</a></li>
+            <li class="nav-item"><a class="nav-link atxt1" href="studies">Education</a></li>
+            <li class="nav-item"><a class="nav-link atxt1" href="experiences">Experience</a></li>
             <li class="nav-item"><a class="nav-link atxt1" href="skills">Skills</a></li>
             
         </ul>
@@ -19,15 +19,15 @@
                         Adm
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" style="background-color: #000070;" aria-labelledby="navbarDropdown1">
-                        <li class="nav-item"><a class="nav-link atxt1" href="createStudie">Crear Estudios</a></li>
+                        <li class="nav-item"><a class="nav-link atxt1" href="createStudie">Create Education</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li class="nav-item"><a class="nav-link atxt1" href="createExperience">Crear Experiencia</a></li>
+                        <li class="nav-item"><a class="nav-link atxt1" href="createExperience">Create Experience</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li class="nav-item"><a class="nav-link atxt1" href="createSkill">Crear Skill</a></li>
+                        <li class="nav-item"><a class="nav-link atxt1" href="createSkill">Create Skill</a></li>
                         <li><hr class="dropdown-divider"></li>
                     </ul>
                 </li>
-                <li class="nav-item navtext"><a class="nav-link" href="{% url 'logoutUser' %}">SALIR</a></li>
+                <li class="nav-item navtext"><a class="nav-link" href="{% url 'logoutUser' %}">Out</a></li>
             {% else %}
                 <li class="nav-item navtext"><a class="nav-link" href="{% url 'loginPage' %}">Log</a></li>
             {% endif %}

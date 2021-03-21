@@ -4,11 +4,11 @@
 {% block content %}
 
 <div class="col-md-11 p-4 boxtext1 c">
-    <h1 class="c">Estudios</h1>
+    <h1 class="c">Education</h1>
 </div>
 
 <div class="col-md-11 p-4 boxtext1 c">
-<h1 class="ms-4">Editar Estudio</h1>
+<h1 class="ms-4">Edit Course or career</h1>
 
     <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
@@ -16,63 +16,63 @@
             <div class="card boxtext1" >
                 <div class="card-body row mt-4">
                     <div class="col-md-4 mx-auto">
-                        <label>Comenzó el mes :</label>
+                        <label>Month Started :</label>
                         {{studieForm.monthStart}}
                     </div>
                     <div class="col-md-4 mx-auto">
-                        <label>Comenzó el año :</label>
+                        <label>Year Started :</label>
                         {{studieForm.yearStart}}
                     </div>
                 </div>
                 <div class="card-body row">
                     <div class="col-md-4 mx-auto">
-                        <label>Termino el mes :</label>
+                        <label>Month Ended :</label>
                         {{studieForm.monthEnd}}
                     </div>
                     <div class="col-md-4 mx-auto">
-                        <label>Termino el año :</label>
+                        <label>Year Ended :</label>
                         {{studieForm.yearEnd}}
                     </div>
                 </div>
                 <div class="card-body row">
                     <div class="col-md-4 mx-auto">
-                        <label>Tipo de Estudio :</label>
+                        <label>Course Type :</label>
                         {{studieForm.kind}}
                     </div>
                     <div class="col-md-4 mx-auto">
-                        <label>terminó? :</label>
+                        <label>Finish it? :</label>
                         {{studieForm.finish}}
                     </div>
                 </div>
                 <div class="card-body row">
                     <div class="col-md-4 mx-auto">
-                        <label>Nombre del Curso :</label>
+                        <label>Course Name :</label>
                         {{studieForm.name}}
                     </div>
                     <div class="col-md-4 mx-auto">
-                        <label>Complemento al nombre :</label>
+                        <label>Course Complement :</label>
                         {{studieForm.remark}}
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="col-md-4 mx-auto">
-                        <label>Institución :</label>
+                        <label>Institution :</label>
                         {{studieForm.institution}}
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="col-md-4 mx-auto">
-                        <label>Ciudad :</label>
+                        <label>City :</label>
                         {{studieForm.city}}
                     </div>
                 </div>
                 <div class="card-body row  mb-4">
                     <div class="col-md-4 mx-auto">
-                        <label>Estado :</label>
+                        <label>State :</label>
                         {{studieForm.state}}
                     </div>
                     <div class="col-md-4 mx-auto">
-                        <label>País :</label>
+                        <label>Country :</label>
                         {{studieForm.country}}
                     </div>
                 </div>
@@ -80,11 +80,11 @@
         </div>
         <div class="col-lg-6 mx-auto row ">
             <div class="container col-lg-5 mt-4 mb-4 ">
-                <button class="btn btn-success btn-block" onclick="goBack()">CANCELAR</button>
+                <button class="btn btn-success btn-block" onclick="goBack()">Cancel</button>
             </div>
 
             <div class="container col-lg-5 mt-4 mb-4 ">
-                <input class="btn btn-success btn-block" type="submit" value="ACTUALIZAR">
+                <input class="btn btn-success btn-block" type="submit" value="Update">
             </div>
         </div>
     </form>

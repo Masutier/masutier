@@ -6,10 +6,10 @@ from .models import *
 from home.decorators import admin_only
 
 def experiences(request):
-    experiences = Experience.objects.all()
+    experiences = Experience.objects.all().order_by('-yearEnd')
 
-    context = {"title": "Experiencia Laboral", "experiences": experiences}
-    return render(request, 'experiences/experiences.html', context)
+    context = {"title": "Work Experience", "experiences": experiences}
+    return render(request, 'experiences/experience.html', context)
 
 
 @login_required(login_url='loginPage')
@@ -20,10 +20,10 @@ def createExperience(request):
         if experienceForm.is_valid():
 
             experienceForm.save()
-            messages.success(request, 'La Experiencia fue creada')
+            messages.success(request, 'Work field created successful')
             return redirect('experiences')
 
-    context = {"title": "Crear Experiencia Laboral", "experienceForm": experienceForm}
+    context = {"title": "Create Work", "experienceForm": experienceForm}
     return render(request, 'experiences/createExperience.html', context)
 
 
@@ -35,10 +35,10 @@ def editExperience(request, pk):
         experienceForm = CreateExperiencesForm(request.POST, request.FILES, instance=experience)
         if experienceForm.is_valid:
             experienceForm.save()
-            messages.success(request, 'La Experiencia fue Actualizada')
+            messages.success(request, 'Work field Update successful')
             return redirect('experiences')
 
-    context = {"title": "Editar Experiencia", "experienceForm": experienceForm}
+    context = {"title": "Edit Work", "experienceForm": experienceForm}
     return render(request, "experiences/editExperience.html", context)
 
 
@@ -47,8 +47,8 @@ def deleteExperience(request, pk):
     experience = Experience.objects.get(id=pk)
     if request.method == 'POST':
         experience.delete()
-        messages.success(request, 'La Experiencia fue Eliminada')
+        messages.success(request, 'Work field deleted')
         return redirect('experiences')
 
-    context = {"title": "Eliminar Experiencia", 'item': experience}
+    context = {"title": "Delete Work", 'item': experience}
     return render(request, 'experiences/deleteExperience.html', context)

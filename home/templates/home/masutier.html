@@ -2,23 +2,35 @@
 {% load static %}
 
 {% block content %}
-
     <div class="col-md-11 p-4 boxtext1 c">
-        {% include 'home/quiensoy.html' %}
+        {% include 'home/welcome.html' %}
     </div>
 
     <div class="col-md-11 p-4 boxtext1 c">
-        {% include 'home/quiensoy.html' %}
-    </div>
+        <div class="row">
+            <div class="col-md-6 m-3 boxtext1">
+                {% include 'home/whoIam.html' %}
+            </div>
+            <div class="col-md-5 m-3 boxtext1">
+                {% include 'home/myPhilosophy.html' %}
+            </div>
+        </div>
 
-    <div class="col-md-11 p-4 boxtext1 c">
-        {% include 'home/quiensoy.html' %}
-    </div>
-    <div class="col-md-11 p-4 boxtext1 c">
-        {% include 'home/quiensoy.html' %}
-    </div>
-    <div class="col-md-11 p-4 boxtext1 c">
-        {% include 'home/quiensoy.html' %}
+        <div class="row">
+            <div class="col-md-5 m-3 boxtext1">
+                {% include 'home/nataly.html' %}
+            </div>
+            <div class="col-md-6 m-3 boxtext1">
+
+            </div>
+        </div>
+    
+
+
+        <div class="col-md-11 mx-auto p-4 boxtext1 c">
+            {% include 'home/other.html' %}
+        </div>
+
     </div>
 
 {% endblock content %}

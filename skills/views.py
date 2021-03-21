@@ -21,10 +21,10 @@ def createSkill(request):
         if skillForm.is_valid():
 
             skillForm.save()
-            messages.success(request, 'El Skill fue creado')
+            messages.success(request, 'Skill created successful')
             return redirect('skills')
 
-    context = {"title": "Crear Skill", "skillForm": skillForm}
+    context = {"title": "Creat Skill", "skillForm": skillForm}
     return render(request, "skills/createSkill.html", context)
 
 
@@ -36,10 +36,10 @@ def editSkill(request, pk):
         skillForm = CreateSkillForm(request.POST, request.FILES, instance=skill)
         if skillForm.is_valid:
             skillForm.save()
-            messages.success(request, 'El Skill fue Actualizado')
+            messages.success(request, 'Skill Updated successful')
             return redirect('skills')
 
-    context = {"title": "Editar Skill", "skillForm": skillForm}
+    context = {"title": "Edit Skill", "skillForm": skillForm}
     return render(request, "skills/editSkill.html", context)
 
 
@@ -48,8 +48,8 @@ def deleteSkill(request, pk):
     skill = Skill.objects.get(id=pk)
     if request.method == 'POST':
         skill.delete()
-        messages.success(request, 'El Skill fue Eliminado')
+        messages.success(request, 'Skill deleted')
         return redirect('skills')
 
-    context = {"title": "Eliminar Skill", 'item': skill}
+    context = {"title": "Delete Skill", 'item': skill}
     return render(request, 'skills/deleteSkill.html', context)
