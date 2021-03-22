@@ -12,29 +12,27 @@
             {% for exp in experiences %}
             <div class="col-md-4 m-4 boxtext1">
                 
-
-                    <div class="col-md-10 m-5">
-                        {% if exp.yearStart %}
-                            <h6>{{ exp.monthStart }} {{ exp.yearStart }} - 
-                        {% endif %}
-                        {{ exp.monthEnd }} {{ exp.yearEnd }} </h6>
-                        <h4 class="card-title mt-1">{{exp.institution}}</h4>
-                        <h5 class="card-text">{{exp.name}}</h5>
-                        <h6 class="card-text">{{exp.description}}</h6>
-                        <h6 class="card-subtitle mb-2 text-muted">{{exp.city}} {{exp.state}} {{exp.country}}</h6>
-                    </div>
-
-                    {% if user.is_authenticated %}
-                    <div class="col-lg-2 m-5 ">
-                        <div class="container col-lg-9 mt-3 mb-4 ">
-                            <td><a href="{% url 'editExperience' exp.id %}" class="btn btn-info btn-sm">Update</a></td>
-                        </div>
-                        <div class="container col-lg-9 mb-4 ">
-                            <td><a href="{% url 'deleteExperience' exp.id %}" class="btn btn-danger btn-sm">Delete</a></td>
-                        </div>
-                    </div>
+                <div class="col-md-10 m-5">
+                    {% if exp.yearStart %}
+                        <h6>{{ exp.monthStart }} {{ exp.yearStart }} - 
                     {% endif %}
+                    {{ exp.monthEnd }} {{ exp.yearEnd }} </h6>
+                    <h4 class="card-title mt-1">{{exp.institution}}</h4>
+                    <h5 class="card-text">{{exp.name}}</h5>
+                    <h6 class="card-text">{{exp.description}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{exp.city}} {{exp.state}} {{exp.country}}</h6>
+                </div>
 
+                {% if user.is_authenticated %}
+                <div class="col-lg-8 mx-auto row mb-3 ">
+                    <div class="container col-lg-6 ">
+                        <td><a href="{% url 'editExperience' exp.id %}" class="btn btn-info btn-sm">Update</a></td>
+                    </div>
+                    <div class="container col-lg-6 ml-1 mb-3 ">
+                        <td><a href="{% url 'deleteExperience' exp.id %}" class="btn btn-danger btn-sm">Delete</a></td>
+                    </div>
+                </div>
+                {% endif %}
                 
             </div>
             {% endfor %}

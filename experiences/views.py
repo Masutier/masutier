@@ -6,7 +6,7 @@ from .models import *
 from home.decorators import admin_only
 
 def experiences(request):
-    experiences = Experience.objects.all().order_by('-yearEnd')
+    experiences = Experience.objects.all().order_by('-yearStart', '-yearEnd')
 
     context = {"title": "Work Experience", "experiences": experiences}
     return render(request, 'experiences/experience.html', context)

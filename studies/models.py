@@ -24,7 +24,7 @@ class Studie(models.Model):
     monthStart = models.CharField(max_length=3, blank=True)
     yearStart = models.CharField(max_length=4, blank=True)
     monthEnd = models.CharField(max_length=3, blank=True)
-    yearEnd = models.CharField(max_length=4, blank=False, null=False)
+    yearEnd = models.CharField(max_length=5, blank=False, null=False)
     finish = models.CharField(max_length=100, choices=FINISH, default="Yes")
 
     def __str__(self):
