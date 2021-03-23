@@ -6,7 +6,7 @@ from .models import *
 from home.decorators import admin_only
 
 def experiences(request):
-    experiences = Experience.objects.all().order_by('-yearStart', '-yearEnd')
+    experiences = Experience.objects.all().order_by('-yearEnd')
 
     context = {"title": "Work Experience", "experiences": experiences}
     return render(request, 'experiences/experience.html', context)
@@ -18,7 +18,6 @@ def createExperience(request):
     if request.method == 'POST':
         experienceForm = CreateExperiencesForm(request.POST, request.FILES)
         if experienceForm.is_valid():
-
             experienceForm.save()
             messages.success(request, 'Work field created successful')
             return redirect('experiences')
