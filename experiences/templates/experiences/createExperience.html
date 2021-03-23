@@ -12,72 +12,69 @@
 
     <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-        <div class="col-md-9 mx-auto">
-            <div class="card boxtext1" >
-                <div class="card-body row mt-4">
-                    <div class="col-md-4 mx-auto">
-                        <label>Month Started :</label>
-                        {{experienceForm.monthStart}}
-                    </div>
-                    <div class="col-md-4 mx-auto">
-                        <label>Year Started :</label>
-                        {{experienceForm.yearStart}}
-                    </div>
+        <div class="col-md-9 mx-auto boxtext1">
+            <div class="col-md-10 row mx-auto ">
+                <div class="col-md-6 mx-auto mt-4">
+                    <label>Month Started :</label>
+                    {{experienceForm.monthStart}}
                 </div>
-                <div class="card-body row">
-                    <div class="col-md-4 mx-auto">
-                        <label>Month Ended :</label>
-                        {{experienceForm.monthStart}}
-                    </div>
-                    <div class="col-md-4 mx-auto">
-                        <label>Year Ended :</label>
-                        {{experienceForm.yearEnd}}
-                    </div>
+                <div class="col-md-6 mx-auto mt-4 ">
+                    <label>Year Started :</label>
+                    {{experienceForm.yearStart}}
                 </div>
-                <div class="card-body row">
-                    <div class="col-md-4 mx-auto">
-                        <label>Company :</label>
-                        {{experienceForm.institution}}
-                    </div>
-                    <div class="col-md-4 mx-auto">
-                        <label>Position :</label>
-                        {{experienceForm.name}}
-                    </div>
+            </div>
+            <div class="col-md-10 row mx-auto mt-3 ">
+                <div class="col-md-6 mx-auto ">
+                    <label>Month Ended :</label>
+                    {{experienceForm.monthStart}}
                 </div>
-                <div class="card-body">
-                    <div class="col-md-8 mx-auto c">
-                        <label>Description :</label>
-                        {{experienceForm.description}}
-                    </div>
+                <div class="col-md-6 mx-auto ">
+                    <label>Year Ended :</label>
+                    {{experienceForm.yearEnd}}
                 </div>
-                <div class="card-body">
-                    <div class="col-md-4 mx-auto">
-                        <label>City :</label>
-                        {{experienceForm.city}}
-                    </div>
+            </div>
+            <div class="col-md-10 row mx-auto mt-3 ">
+                <div class="col-md-6 mx-auto ">
+                    <label>Company :</label>
+                    {{experienceForm.institution}}
                 </div>
-                <div class="card-body row mb-4">
-                    <div class="col-md-4 mx-auto">
-                        <label>State :</label>
-                        {{experienceForm.state}}
-                    </div>
-                    <div class="col-md-4 mx-auto">
-                        <label>Country :</label>
-                        {{experienceForm.country}}
-                    </div>
+                <div class="col-md-6 mx-auto ">
+                    <label>Position :</label>
+                    {{experienceForm.name}}
+                </div>
+            </div>
+            <div class="col-md-7 mx-auto mt-3 ">
+                <label>Description :</label>
+                {{experienceForm.description}}
+            </div>
+            <div class="col-md-10 row mx-auto mt-3 ">
+                <div class="col-md-6 mx-auto ">
+                    <label>City :</label>
+                    {{experienceForm.city}}
+                </div>
+            </div>
+            <div class="col-md-10 row mx-auto mt-3 ">
+                <div class="col-md-6 mx-auto mb-4 ">
+                    <label>State :</label>
+                    {{experienceForm.state}}
+                </div>
+                <div class="col-md-6 mx-auto mb-4 ">
+                    <label>Country :</label>
+                    {{experienceForm.country}}
                 </div>
             </div>
         </div>
+        
         <div class="col-lg-6 mx-auto row ">
             <div class="container col-lg-5 mt-4 mb-4 ">
                 <button class="btn btn-success btn-block" onclick="goBack()">Cancel</button>
             </div>
-
             <div class="container col-lg-5 mt-4 mb-4 ">
                 <input class="btn btn-success btn-block" type="submit" value="Create">
             </div>
         </div>
     </form>
+
 </div>
 
 <script>

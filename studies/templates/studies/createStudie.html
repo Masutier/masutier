@@ -12,82 +12,81 @@
 
     <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-        <div class="col-md-8 mx-auto">
-            <div class="card boxtext1" >
-                <div class="card-body row mt-4">
-                    <div class="col-md-4 mx-auto">
-                        <label>Month Started :</label>
-                        {{studieForm.monthStart}}
-                    </div>
-                    <div class="col-md-4 mx-auto">
-                        <label>Year Started :</label>
-                        {{studieForm.yearStart}}
-                    </div>
+        <div class="col-md-9 mx-auto boxtext1">
+            <div class="col-md-10 row mx-auto ">
+                <div class="col-md-6 mx-auto mt-4">
+                    <label>Month Started :</label>
+                    {{studieForm.monthStart}}
                 </div>
-                <div class="card-body row">
-                    <div class="col-md-4 mx-auto">
-                        <label>Month Ended :</label>
-                        {{studieForm.monthEnd}}
-                    </div>
-                    <div class="col-md-4 mx-auto">
-                        <label>Year Ended :</label>
-                        {{studieForm.yearEnd}}
-                    </div>
+                <div class="col-md-6 mx-auto mt-4">
+                    <label>Year Started :</label>
+                    {{studieForm.yearStart}}
                 </div>
-                <div class="card-body row">
-                    <div class="col-md-4 mx-auto">
-                        <label>Course Type :</label>
-                        {{studieForm.kind}}
-                    </div>
-                    <div class="col-md-4 mx-auto">
-                        <label>Finish it? :</label>
-                        {{studieForm.finish}}
-                    </div>
+            </div>
+            <div class="col-md-10 row mx-auto mt-3 ">
+                <div class="col-md-6 mx-auto ">
+                    <label>Month Ended :</label>
+                    {{studieForm.monthEnd}}
                 </div>
-                <div class="card-body row">
-                    <div class="col-md-4 mx-auto">
-                        <label>Course Name :</label>
-                        {{studieForm.name}}
-                    </div>
-                    <div class="col-md-4 mx-auto">
-                        <label>Course Complement :</label>
-                        {{studieForm.remark}}
-                    </div>
+                <div class="col-md-6 mx-auto ">
+                    <label>Year Ended :</label>
+                    {{studieForm.yearEnd}}
                 </div>
-                <div class="card-body">
-                    <div class="col-md-4 mx-auto">
-                        <label>Institution :</label>
-                        {{studieForm.institution}}
-                    </div>
+            </div>
+            <div class="col-md-10 row mx-auto mt-4 ">
+                <div class="col-md-6 mx-auto ">
+                    <label>Course Type :</label>
+                    {{studieForm.kind}}
                 </div>
-                <div class="card-body">
-                    <div class="col-md-4 mx-auto">
-                        <label>City :</label>
-                        {{studieForm.city}}
-                    </div>
+                <div class="col-md-6 mx-auto ">
+                    <label>Finish it? :</label>
+                    {{studieForm.finish}}
                 </div>
-                <div class="card-body row  mb-4">
-                    <div class="col-md-4 mx-auto">
-                        <label>State :</label>
-                        {{studieForm.state}}
-                    </div>
-                    <div class="col-md-4 mx-auto">
-                        <label>Country :</label>
-                        {{studieForm.country}}
-                    </div>
+            </div>
+            <div class="col-md-10 row mx-auto mt-3 ">
+                <div class="col-md-6 mx-auto ">
+                    <label>Course Name :</label>
+                    {{studieForm.name}}
+                </div>
+                <div class="col-md-6 mx-auto ">
+                    <label>Course Complement :</label>
+                    {{studieForm.remark}}
+                </div>
+            </div>
+            <div class="col-md-10 row mx-auto mt-3 ">
+                <div class="col-md-6 mx-auto ">
+                    <label>Institution :</label>
+                    {{studieForm.institution}}
+                </div>
+            </div>
+            <div class="col-md-10 row mx-auto mt-3 ">
+                <div class="col-md-6 mx-auto ">
+                    <label>City :</label>
+                    {{studieForm.city}}
+                </div>
+            </div>
+            <div class="col-md-10 row mx-auto mt-3 ">
+                <div class="col-md-6 mx-auto mb-4 ">
+                    <label>State :</label>
+                    {{studieForm.state}}
+                </div>
+                <div class="col-md-6 mx-auto mb-4 ">
+                    <label>Country :</label>
+                    {{studieForm.country}}
                 </div>
             </div>
         </div>
+
         <div class="col-lg-6 mx-auto row ">
             <div class="container col-lg-5 mt-4 mb-4 ">
                 <button class="btn btn-success btn-block" onclick="goBack()">Cancel</button>
             </div>
-
             <div class="container col-lg-5 mt-4 mb-4 ">
                 <input class="btn btn-success btn-block" type="submit" value="Create">
             </div>
         </div>
     </form>
+
 </div>
 
 <script>
