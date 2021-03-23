@@ -12,7 +12,6 @@ class Studie(models.Model):
     FINISH = (
         ('Yes', "Yes"),
         ('No', "No"),
-        ('En Curso', "En Curso"),
     )
     kind = models.CharField(max_length=100, choices=STATUS, default="Other")
     name = models.CharField(max_length=30, blank=False, null=False)
