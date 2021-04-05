@@ -1,11 +1,12 @@
 {% load static %}
 
 <nav class="navbar navbar-expand-lg navbar-dark a1">
+    <div class="container-fluid">
     <a class="navbar-brand " href="/"><img src="{% static '/img/people/gabrielenoq.png' %}" class="imgnav" alt="Gabriel" /></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDrop" aria-controls="navbarDrop" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse" id="navbarDrop">
         <ul class="navbar-nav me-auto">
             <li class="nav-item"><a class="nav-link atxt1" href="studies">Education</a></li>
             <li class="nav-item"><a class="nav-link atxt1" href="experiences">Experience</a></li>
@@ -15,22 +16,23 @@
         <ul class="navbar-nav mt-2 mt-lg-0">
             {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle atxt1" href="#" id="navbarDrop1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Adm
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end" style="background-color: #000070;" aria-labelledby="navbarDropdown1">
-                        <li class="nav-item"><a class="nav-link atxt1" href="createStudie">Create Education</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end a2" aria-labelledby="navbarDrop1">
+                        <li><a class="dropdown-item atxt1" href="createStudie">Create Education</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li class="nav-item"><a class="nav-link atxt1" href="createExperience">Create Experience</a></li>
+                        <li><a class="dropdown-item atxt1" href="createExperience">Create Experience</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li class="nav-item"><a class="nav-link atxt1" href="createSkill">Create Skill</a></li>
+                        <li><a class="dropdown-item atxt1" href="createSkill">Create Skill</a></li>
                         <li><hr class="dropdown-divider"></li>
                     </ul>
                 </li>
-                <li class="nav-item navtext"><a class="nav-link" href="{% url 'logoutUser' %}">Out</a></li>
+                <li class="nav-item navtext"><a class="nav-link atxt1" href="{% url 'logoutUser' %}">Out</a></li>
             {% else %}
-                <li class="nav-item navtext"><a class="nav-link" href="{% url 'loginPage' %}">Log</a></li>
+                <li class="nav-item navtext"><a class="nav-link atxt1" href="{% url 'loginPage' %}">Log</a></li>
             {% endif %}
         </ul>
+    </div>
     </div>
 </nav>
